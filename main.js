@@ -9,11 +9,11 @@ let subject,
   str = "";
 let afterlunch = [
   [],
-  ["1:35-2:25", "2:25-3:15", "3:15-4:55"],
-  ["1:35-3:15"],
-  ["1:35-2:25", "2:25-3:15", "3:15-4:55"],
-  ["1:35-2:25", "2:25-4:55"],
-  ["1:35-2:25", "2:25-3:15"],
+  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
+  ["1:35 - 3:15"],
+  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
+  ["1:35 - 2:25", "2:25 - 4:55"],
+  ["1:35 - 2:25", "2:25 - 3:15"],
   [],
 ];
 let subjects = [
@@ -160,16 +160,16 @@ function getType(code) {
 
 function getTimings(n, date) {
   if (n == 1) {
-    return "9:00-10:00";
+    return "9:00 - 10:00";
   }
   if (n == 2) {
-    return "10:00-11:00";
+    return "10:00 - 11:00";
   }
   if (n == 3) {
-    return "11:00-12:00";
+    return "11:00 - 12:00";
   }
   if (n == 4) {
-    return "12:00-12:55";
+    return "12:00 - 12:55";
   }
   if (n > 4) {
     return afterlunch[date.getDay()][n - 5];
@@ -187,4 +187,9 @@ function appendall(sno, subject, type, time) {
 
 function printtimetable(string) {
   tablecontent.innerHTML = string;
+}
+active()
+function active(){
+  let date = new Date;
+  time = date.getHours()+":"+date.getMinutes();
 }
