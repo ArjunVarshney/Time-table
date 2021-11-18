@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Gym Schedule</title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+   <header>
+      <span class="material-icons disable-select">menu</span>
+      <h2>Arjun</h2>
+   </header>
+   <aside>
+      <ul class="disable-select">
+         <li onclick="changeday(this)" id="1">Monday</li>
+         <li onclick="changeday(this)" id="2">Tuesday</li>
+         <li onclick="changeday(this)" id="3">Wednesday</li>
+         <li onclick="changeday(this)" id="4">Thursday</li>
+         <li onclick="changeday(this)" id="5">Friday</li>
+         <li onclick="changeday(this)" id="6">Saturday</li>
+         <li onclick="changeday(this)" id="7">Sunday</li>
+      </ul>
+   </aside>
+   <main>
+      <div class="day">Tuesday</div>
+      <div class="table">
+         <table>
+            <thead>
+               <tr>
+                  <th>Sno.</th>
+                  <th>Subject</th>
+                  <th>Type</th>
+                  <th>Timings</th>
+               </tr>
+            </thead>
+            <tbody></tbody>
+         </table>
+      </div>
+   </main>
+</body>
+<script src="main.js"></script>
+</html>

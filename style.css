@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--secondarytext);
+  transition: 0.2s;
+}
+:root {
+  --primary: #202124;
+  --secondarytext: #e8eaed;
+  --secondary: #5f6368;
+  --side: #303134;
+  --secondaryside: #3c3d40;
+}
+body {
+  background-color: var(--primary);
+}
+header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--secondary);
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+header > h2 {
+  margin-left: 24px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  font-size: 24px;
+}
+header span {
+  display: none !important;
+}
+aside {
+  height: calc(100vh - 64px);
+  width: 35%;
+  float: right;
+  display: flex;
+  justify-content: flex-start;
+  background-color: var(--side);
+  padding: 10px;
+  box-shadow: 0 8px 10px -5px rgb(0 0 0 / 20%), 0 16px 24px 2px rgb(0 0 0 / 14%),
+    0 6px 30px 5px rgb(0 0 0 / 12%);
+}
+aside ul {
+  width: 100%;
+}
+aside ul li {
+  list-style: none;
+  font-family: "Poppins";
+  padding: 10px;
+  padding-left: 30px;
+  width: calc(100% - 40px);
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: var(--secondaryside);
+}
+aside ul li:hover {
+  filter: brightness(130%);
+  cursor: pointer;
+}
+aside ul li:active {
+  filter: brightness(80%);
+}
+main {
+  width: 65%;
+  padding-left: 20px;
+}
+.day {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(100% - 40px);
+  font-family: "Georama", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 20px;
+  border: 1px solid var(--secondary);
+}
+.muscle {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(100% - 40px);
+  font-family: "Georama", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 20px;
+  border: 1px solid var(--secondary);
+}
+main .table table {
+  padding: 0 20px;
+}
+table {
+  width: 100%;
+  font-family: "Georama", sans-serif;
+  border-spacing: 0px;
+}
+thead {
+  text-align: left;
+}
+thead tr:first-child th {
+  border-top: 1px solid var(--secondary);
+}
+thead tr:first-child th:first-child {
+  border-left: 1px solid var(--secondary);
+}
+thead tr:first-child th:last-child {
+  border-right: 1px solid var(--secondary);
+}
+tbody tr td:first-child {
+  border-left: 1px solid var(--secondary);
+}
+tbody tr td:last-child {
+  border-right: 1px solid var(--secondary);
+}
+tbody tr:last-child td {
+  border-bottom: 1px solid var(--secondary);
+}
+thead th {
+  border: 0.2px solid var(--secondary);
+  font-size: 20px;
+  padding: 15px;
+}
+table td {
+  border: 0.2px solid var(--secondary);
+  padding: 15px;
+}
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+tbody tr:last-child > td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tbody tr:last-child > td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.disable-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media only screen and (max-width: 700px) {
+  header span {
+    display: block !important;
+  }
+  aside {
+    position: absolute;
+    right: 0px;
+    width: 0px;
+    overflow-x: hidden;
+  }
+  main {
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  thead th {
+    font-size: 4vw;
+    padding: 15px 2vw;
+  }
+  tbody td {
+    font-size: 3.5vw;
+    padding: 15px 2vw;
+  }
+}
