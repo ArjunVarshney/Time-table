@@ -131,6 +131,9 @@ function setTimetable(todaytt, date) {
     type = getType(element.substr(element.length - 3, element.length));
     timings = getTimings(i + 1, date);
     appendall(sno, subject, type, timings);
+    if (sno == 4) {
+      appendall(" ", "Lunch", " ", "12:55 - 1:35");
+    }
   }
   printtimetable(str);
 }
@@ -188,8 +191,46 @@ function appendall(sno, subject, type, time) {
 function printtimetable(string) {
   tablecontent.innerHTML = string;
 }
-active()
-function active(){
-  let date = new Date;
-  time = date.getHours()+":"+date.getMinutes();
+
+setInterval(() => {
+  active();
+}, 1000);
+
+function active() {
+  let date = new Date();
+  let n = 0,
+    x = 0;
+  if (date.getHours() >= 13 && date.getMinutes() > 35) {
+    document.querySelector(
+      "tr:nth-child(5) td:nth-child(2)"
+    ).style.textDecoration = "line-through";
+    n = 4;
+  } else if (date.getHours() >= 12 && date.getMinutes() >= 55) {
+    n = 4;
+  } else if (date.getHours() >= 12) {
+    n = 3;
+  } else if (date.getHours() >= 11) {
+    n = 2;
+  } else if (date.getHours() >= 10) {
+    n = 1;
+  }
+  let timearr = afterlunch[date.getDay()];
+  for (let i = 0; i < timearr.length; i++) {
+    let dash = timearr[i].indexOf("-");
+    let colon = timearr[i].lastIndexOf(":");
+    let hours = timearr[i].substring(dash + 2, colon);
+    let minutes = timearr[i].substring(colon + 1);
+    if (date.getHours() >= hours + 12 && date.getMinutes() >= minutes + 12) {
+      x = i + 1;
+    }
+  }
+  n = n + x;
+  finished(n);
+}
+
+function finished(n) {
+  for (let i = 1; i <= n; i++) {
+    let element = document.querySelector(`tr:nth-child(${i}) td:nth-child(2)`);
+    element.style.textDecoration = "line-through";
+  }
 }
