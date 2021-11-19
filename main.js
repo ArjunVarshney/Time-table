@@ -227,7 +227,7 @@ function active() {
     }
   }
   n = n + x;
-  if (n == timetable[date.getDay()].length) {
+  if (n === timetable[date.getDay()].length) {
     document.querySelector(".Hometime").style.display = "block";
   }
   finished(n);
