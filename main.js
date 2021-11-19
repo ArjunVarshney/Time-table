@@ -80,6 +80,8 @@ let timetable = [
   [],
 ];
 
+document.querySelector(".Hometime").style.display = "none";
+
 menu.addEventListener("click", () => {
   if (menu.innerHTML == "close") {
     sidebar.style.width = "0";
@@ -225,6 +227,9 @@ function active() {
     }
   }
   n = n + x;
+  if (n == timetable[date.getDay].length) {
+    document.querySelector(".Hometime").style.display = "block";
+  }
   finished(n);
 }
 
