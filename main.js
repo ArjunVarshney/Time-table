@@ -110,6 +110,7 @@ function changeday(element) {
   }
   date = new Date(`March ${element.id}, 2021`);
   str = "";
+  tablecontent.innerHTML = "";
   getschedule(date);
 }
 
