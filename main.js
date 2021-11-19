@@ -220,7 +220,7 @@ function active() {
     let colon = timearr[i].lastIndexOf(":");
     let hours = timearr[i].substring(dash + 2, colon);
     let minutes = timearr[i].substring(colon + 1);
-    if (date.getHours() >= hours + 12 && date.getMinutes() >= minutes + 12) {
+    if (date.getHours() >= hours + 12 && date.getMinutes() >= minutes) {
       x = i + 1;
     }
   }
