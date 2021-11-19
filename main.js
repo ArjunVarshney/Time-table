@@ -17,16 +17,16 @@ let afterlunch = [
   [],
 ];
 let subjects = [
-  "Engineering Mathematics",
-  "Engineering Chemistry",
-  "Emerging Domain in Elec. Engineering",
-  "Fundamentals of Mechanical Engg. and Mechatronics",
-  "Emerging Technology for Engineering",
-  "Soft Skill",
-  "Engineering Chemistry lab",
-  "Basic Electronics Engineering lab",
-  "Mechanical Workshop lab",
-  "English Language lab",
+  "Engineering Mathematics (KAS-103T)",
+  "Engineering Chemistry (KAS-102T)",
+  "Emerging Domain in Elec. Engineering (KEC-101T)",
+  "Fundamentals of Mechanical Engg. and Mechatronics (KME-101T)",
+  "Emerging Technology for Engineering (KMC-102)",
+  "Soft Skill (KNC-101)",
+  "Engineering Chemistry lab (KAS-152P)",
+  "Basic Electronics Engineering lab (KEC-151P)",
+  "Mechanical Workshop lab (KWS-151P)",
+  "English Language lab (KAS-154P)",
 ];
 let codes = [
   "KAS-103T",
