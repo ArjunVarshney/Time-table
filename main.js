@@ -7,6 +7,18 @@ let subject,
   weekday,
   sno,
   str = "";
+let faculty = [
+  ["Dr. Geeta Verma"],
+  ["Dr. Ashutosh Srivastava"],
+  ["Er. Awanish Kr. Shukla"],
+  ["Er. Dinesh"],
+  ["New IT-1"],
+  ["Mr. Shivesh Bhatnagar"],
+  ["Dr. Ashutosh Srivastava, D. K Mishra"],
+  ["Er. Awanish Kr. Shukla, Er. Sanjay Kr. Maurya"],
+  ["Er. Nitesh Gupta, Er. Sunil Kr. Yadav"],
+  ["Ms. Snigdh, Ms. Konica Mukherjee"],
+];
 let afterlunch = [
   [],
   ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
@@ -151,6 +163,7 @@ function setTimetable(todaytt, date) {
     code = element.substr(0, element.length - 3);
     type = getType(element.substr(element.length - 3, element.length));
     timings = getTimings(i + 1, date);
+    teacher = getFaculty(code);
     appendall(sno, subject, type, timings);
     if (sno == 4) {
       appendall(" ", "Lunch", " ", "12:55 - 1:35");
@@ -202,11 +215,42 @@ function getTimings(n, date) {
 function appendall(sno, subject, type, time) {
   str += `<tr>
     <td>${sno}</td>
-    <td>${subject}</td>
+    <td onclick = "showFaculty(this)">${subject}</td>
     <td>${type}</td>
     <td>${time}</td>
   </tr>
 `;
+}
+
+function showFaculty(element) {
+  if (element.parentElement.style.background == "rgb(48, 49, 52)") {
+    let subject = getFacultySubject(element.innerText);
+    element.innerText = subject;
+    element.parentElement.style.background = "none";
+  } else {
+    let subject = element.innerText;
+    let code = subject.substring(
+      subject.lastIndexOf("(") + 1,
+      subject.lastIndexOf(")")
+    );
+    let faculty = getFaculty(code);
+    element.innerText = faculty[0];
+    element.parentElement.style.background = "rgb(48, 49, 52)";
+  }
+}
+function getFaculty(code) {
+  for (let i = 0; i < codes.length; i++) {
+    if (code === codes[i]) {
+      return faculty[i];
+    }
+  }
+}
+function getFacultySubject(name) {
+  for (let i = 0; i < faculty.length; i++) {
+    if (faculty[i][0] === name) {
+      return subjects[i];
+    }
+  }
 }
 
 function printtimetable(string) {
