@@ -119,7 +119,12 @@ function getschedule(date) {
       weekday = days[date.getDay()];
       day.innerHTML = weekday;
       let todaytt = timetable[i];
-      setTimetable(todaytt, date);
+      if (weekday == "Sunday" || weekday == "Saturday") {
+        document.querySelector(".Holiday").style.display = "block";
+      } else {
+        document.querySelector(".Holiday").style.display = "none";
+        setTimetable(todaytt, date);
+      }
     }
   }
 }
