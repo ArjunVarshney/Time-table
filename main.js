@@ -109,12 +109,23 @@ function changeday(element) {
     menu.innerHTML = "menu";
   }
   date = new Date(`March ${element.id}, 2021`);
+  let currentdate = new Date();
   str = "";
   tablecontent.innerHTML = "";
   document.querySelector(".Hometime").style.display = "none";
-  clearInterval(interval);
+  if (currentdate.getDay() === date.getDay()) {
+    interval = setInterval(() => {
+      active();
+    }, 1000);
+  } else {
+    clearInterval(interval);
+  }
   getschedule(date);
 }
+
+let interval = setInterval(() => {
+  active();
+}, 1000);
 
 function getschedule(date) {
   for (let i = 0; i < 7; i++) {
@@ -201,10 +212,6 @@ function appendall(sno, subject, type, time) {
 function printtimetable(string) {
   tablecontent.innerHTML = string;
 }
-
-let interval = setInterval(() => {
-  active();
-}, 1000);
 
 function active() {
   let date = new Date();
