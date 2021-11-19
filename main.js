@@ -111,6 +111,7 @@ function changeday(element) {
   date = new Date(`March ${element.id}, 2021`);
   str = "";
   tablecontent.innerHTML = "";
+  document.querySelector(".Hometime").style.display = "none";
   clearInterval(interval);
   getschedule(date);
 }
