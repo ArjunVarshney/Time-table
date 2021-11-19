@@ -111,6 +111,7 @@ function changeday(element) {
   date = new Date(`March ${element.id}, 2021`);
   str = "";
   tablecontent.innerHTML = "";
+  clearInterval(interval);
   getschedule(date);
 }
 
@@ -200,7 +201,7 @@ function printtimetable(string) {
   tablecontent.innerHTML = string;
 }
 
-setInterval(() => {
+let interval = setInterval(() => {
   active();
 }, 1000);
 
@@ -208,12 +209,15 @@ function active() {
   let date = new Date();
   let n = 0,
     x = 0;
-  if (date.getHours() >= 13 && date.getMinutes() > 35) {
-    document.querySelector(
-      "tr:nth-child(5) td:nth-child(2)"
-    ).style.textDecoration = "line-through";
-    n = 4;
-  } else if (date.getHours() >= 12 && date.getMinutes() >= 55) {
+  if (
+    (date.getHours() >= 13 && date.getMinutes() >= 35) ||
+    date.getHours() >= 14
+  ) {
+    n = 5;
+  } else if (
+    (date.getHours() >= 12 && date.getMinutes() >= 55) ||
+    date.getHours() >= 13
+  ) {
     n = 4;
   } else if (date.getHours() >= 12) {
     n = 3;
@@ -228,12 +232,16 @@ function active() {
     let colon = timearr[i].lastIndexOf(":");
     let hours = timearr[i].substring(dash + 2, colon);
     let minutes = timearr[i].substring(colon + 1);
-    if (date.getHours() >= hours + 12 && date.getMinutes() >= minutes) {
+    if (
+      (date.getHours() >= parseInt(hours) + 12 &&
+        date.getMinutes() >= parseInt(minutes)) ||
+      date.getHours() >= parseInt(hours) + 13
+    ) {
       x = i + 1;
     }
   }
   n = n + x;
-  if (n === timetable[date.getDay()].length) {
+  if (n - 1 === timetable[date.getDay()].length) {
     document.querySelector(".Hometime").style.display = "block";
   }
   finished(n);
