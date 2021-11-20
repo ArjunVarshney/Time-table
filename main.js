@@ -229,13 +229,15 @@ function showFaculty(element) {
     element.parentElement.style.background = "none";
   } else {
     let subject = element.innerText;
-    let code = subject.substring(
-      subject.lastIndexOf("(") + 1,
-      subject.lastIndexOf(")")
-    );
-    let faculty = getFaculty(code);
-    element.innerText = faculty[0];
-    element.parentElement.style.background = "rgb(48, 49, 52)";
+    if (subject !== "Quiz" && subject !== "Lunch") {
+      let code = subject.substring(
+        subject.lastIndexOf("(") + 1,
+        subject.lastIndexOf(")")
+      );
+      let faculty = getFaculty(code);
+      element.innerText = faculty[0];
+      element.parentElement.style.background = "rgb(48, 49, 52)";
+    }
   }
 }
 function getFaculty(code) {
@@ -261,22 +263,24 @@ function active() {
   let date = new Date();
   let n = 0,
     x = 0;
-  if (
-    (date.getHours() >= 13 && date.getMinutes() >= 35) ||
-    date.getHours() >= 14
-  ) {
-    n = 5;
-  } else if (
-    (date.getHours() >= 12 && date.getMinutes() >= 55) ||
-    date.getHours() >= 13
-  ) {
-    n = 4;
-  } else if (date.getHours() >= 12) {
-    n = 3;
-  } else if (date.getHours() >= 11) {
-    n = 2;
-  } else if (date.getHours() >= 10) {
-    n = 1;
+  if (days[date.getDay()] != "Saturday" && days[date.getDay()] != "Sunday") {
+    if (
+      (date.getHours() >= 13 && date.getMinutes() >= 35) ||
+      date.getHours() >= 14
+    ) {
+      n = 5;
+    } else if (
+      (date.getHours() >= 12 && date.getMinutes() >= 55) ||
+      date.getHours() >= 13
+    ) {
+      n = 4;
+    } else if (date.getHours() >= 12) {
+      n = 3;
+    } else if (date.getHours() >= 11) {
+      n = 2;
+    } else if (date.getHours() >= 10) {
+      n = 1;
+    }
   }
   let timearr = afterlunch[date.getDay()];
   for (let i = 0; i < timearr.length; i++) {

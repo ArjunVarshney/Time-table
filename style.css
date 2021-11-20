@@ -122,6 +122,9 @@ table td {
   border: 0.2px solid var(--secondary);
   padding: 15px;
 }
+table tbody tr td:nth-child(2){
+  cursor: pointer;
+}
 thead th:first-child {
   border-top-left-radius: 10px;
 }
