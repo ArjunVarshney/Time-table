@@ -38,7 +38,9 @@ header span {
   display: none !important;
 }
 aside {
-  height: 100vh;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
   width: 35%;
   float: right;
   display: flex;
@@ -165,9 +167,6 @@ tbody tr:last-child > td:last-child {
     display: block !important;
   }
   aside {
-    height: calc(100% + 200px);
-    position: absolute;
-    right: 0px;
     width: 0px;
     overflow-x: hidden;
   }
