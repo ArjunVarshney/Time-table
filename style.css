@@ -175,6 +175,9 @@ tbody tr:last-child > td:last-child {
     padding: 10px;
     width: calc(100% - 20px);
   }
+  .diary{
+    padding: 7px;
+  }
 }
 
 @media only screen and (max-width: 415px) {
@@ -185,5 +188,8 @@ tbody tr:last-child > td:last-child {
   tbody td {
     font-size: 3.5vw;
     padding: 15px 2vw;
+  }
+  .diary{
+    padding: 5px;
   }
 }
