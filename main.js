@@ -303,5 +303,6 @@ function finished(n) {
   for (let i = 1; i <= n; i++) {
     let element = document.querySelector(`tr:nth-child(${i}) td:nth-child(2)`);
     element.style.textDecoration = "line-through";
+    element.style.opacity = "0.6";
   }
 }
