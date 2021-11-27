@@ -1,13 +1,20 @@
 let mode = document.querySelector(".mode");
-mode.addEventListener("click", () => {
-  if (mode.innerText == "dark_mode") {
+let prevmode = localStorage.getItem("mode");
+function changemode() {
+  if (localStorage.getItem("mode") == "dark") {
+    localStorage.setItem("mode", "light");
     mode.innerText = "light_mode";
     lightmode();
   } else {
+    localStorage.setItem("mode", "dark");
     mode.innerText = "dark_mode";
     darkmode();
   }
-});
+}
+
+changemode();
+changemode();
+mode.addEventListener("click", changemode);
 
 function lightmode() {
   let root = document.querySelector(":root");
