@@ -11,7 +11,7 @@ mode.addEventListener("click", () => {
 
 function lightmode() {
   let root = document.querySelector(":root");
-  root.style.setProperty("--primary", "#fffff");
+  root.style.setProperty("--primary", "#ffffff");
   root.style.setProperty("--secondarytext", "#202124");
   root.style.setProperty("--secondary", "#5f6368");
   root.style.setProperty("--side", "#ffffff");

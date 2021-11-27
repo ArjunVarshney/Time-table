@@ -222,8 +222,12 @@ function appendall(sno, subject, type, time) {
 `;
 }
 
+let sidetab = document.querySelector("aside > ul > li");
 function showFaculty(element) {
-  if (element.parentElement.style.background == "rgb(48, 49, 52)") {
+  background = window
+    .getComputedStyle(sidetab)
+    .getPropertyValue("background-color");
+  if (element.parentElement.style.background == background) {
     let subject = getFacultySubject(element.innerText);
     element.innerText = subject;
     element.parentElement.style.background = "none";
@@ -236,7 +240,7 @@ function showFaculty(element) {
       );
       let faculty = getFaculty(code);
       element.innerText = faculty[0];
-      element.parentElement.style.background = "rgb(48, 49, 52)";
+      element.parentElement.style.background = background;
     }
   }
 }
