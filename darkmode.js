@@ -12,8 +12,12 @@ function changemode() {
   }
 }
 
-changemode();
-changemode();
+if (localStorage.getItem("mode") == null) {
+  changemode();
+} else {
+  changemode();
+  changemode();
+}
 mode.addEventListener("click", changemode);
 
 function lightmode() {
