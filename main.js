@@ -18,13 +18,14 @@ let faculty = [
   ["Er. Awanish Kr. Shukla, Er. Sanjay Kr. Maurya"],
   ["Er. Nitesh Gupta, Er. Sunil Kr. Yadav"],
   ["Ms. Snigdh, Ms. Konica Mukherjee"],
+  ["Free"],
 ];
 let afterlunch = [
   [],
-  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
-  ["1:35 - 3:15"],
-  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
   ["1:35 - 2:25", "2:25 - 4:55"],
+  ["1:35 - 3:15", "3:15 - 4:05"],
+  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
+  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
   ["1:35 - 2:25", "2:25 - 3:15"],
   [],
 ];
@@ -39,6 +40,7 @@ let subjects = [
   "Basic Electronics Engineering lab (KEC-151P)",
   "Mechanical Workshop lab (KWS-151P)",
   "English Language lab (KAS-154P)",
+  "Free",
 ];
 let codes = [
   "KAS-103T",
@@ -51,6 +53,7 @@ let codes = [
   "KEC-151P",
   "KWS-151P",
   "KAS-154P",
+  "Free",
 ];
 let timetable = [
   [],
@@ -60,17 +63,23 @@ let timetable = [
     "KEC-101T(L)",
     "KME-101T(L)",
     "KMC-102(L)",
-    "KAS-102T(T)",
-    "KAS-152P(P)",
+    "KAS-151P(P)",
   ],
-  ["KEC-101T(L)", "KAS-103T(L)", "KAS-102T(L)", "KME-101T(L)", "KEC-151P(P)"],
+  [
+    "KEC-101T(L)",
+    "KAS-103T(L)",
+    "KAS-102T(L)",
+    "KME-101T(L)",
+    "KEC-151P(P)",
+    "KNC-101(L)",
+  ],
   [
     "KAS-102T(L)",
     "KAS-103T(L)",
     "KEC-101T(L)",
-    "KME-101T(L)",
     "KMC-102(L)",
-    "KNC-101(L)",
+    "KME-101T(L)",
+    "KAS-102T(T)",
     "KAS-154P(P)",
   ],
   [
@@ -79,6 +88,7 @@ let timetable = [
     "KAS-102T(L)",
     "KEC-101T(L)",
     "KEC-101T(T)",
+    "",
     "KWS-151P(P)",
   ],
   [
@@ -103,7 +113,7 @@ menu.addEventListener("click", () => {
     menu.innerHTML = "close";
   }
 });
-let date = new Date();
+let date = new Date(2021, 11, 2, 4, 5, 23);
 let days = [
   "Sunday",
   "Monday",
@@ -173,6 +183,9 @@ function setTimetable(todaytt, date) {
 }
 
 function getSubject(code) {
+  if (code === "") {
+    return "Free";
+  }
   if (code === "Quiz") {
     return code;
   }
@@ -190,6 +203,8 @@ function getType(code) {
     return "Tutorial";
   } else if (code === "(P)") {
     return "Practical";
+  } else if (code === "") {
+    return "Free";
   } else {
     return "Quiz";
   }
@@ -233,7 +248,7 @@ function showFaculty(element) {
     element.parentElement.style.background = "none";
   } else {
     let subject = element.innerText;
-    if (subject !== "Quiz" && subject !== "Lunch") {
+    if (subject !== "Quiz" && subject !== "Lunch" && subject !== "Free") {
       let code = subject.substring(
         subject.lastIndexOf("(") + 1,
         subject.lastIndexOf(")")
@@ -264,7 +279,7 @@ function printtimetable(string) {
 }
 
 function active() {
-  let date = new Date();
+  let date = new Date(2021, 11, 2, 16, 5, 23);
   let n = 0,
     x = 0;
   if (days[date.getDay()] != "Saturday" && days[date.getDay()] != "Sunday") {
