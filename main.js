@@ -113,7 +113,7 @@ menu.addEventListener("click", () => {
     menu.innerHTML = "close";
   }
 });
-let date = new Date(2021, 11, 2, 4, 5, 23);
+let date = new Date();
 let days = [
   "Sunday",
   "Monday",
@@ -279,7 +279,7 @@ function printtimetable(string) {
 }
 
 function active() {
-  let date = new Date(2021, 11, 2, 16, 5, 23);
+  let date = new Date();
   let n = 0,
     x = 0;
   if (days[date.getDay()] != "Saturday" && days[date.getDay()] != "Sunday") {
