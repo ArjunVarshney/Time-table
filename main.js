@@ -63,7 +63,7 @@ let timetable = [
     "KEC-101T(L)",
     "KME-101T(L)",
     "KMC-102(L)",
-    "KAS-151P(P)",
+    "KWS-151P(P)",
   ],
   [
     "KEC-101T(L)",
@@ -89,7 +89,7 @@ let timetable = [
     "KEC-101T(L)",
     "KEC-101T(T)",
     "",
-    "KWS-151P(P)",
+    "KAS-152P(P)",
   ],
   [
     "Quiz(Q)",
