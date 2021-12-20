@@ -166,6 +166,34 @@ tbody tr:last-child > td:last-child {
   border-bottom-right-radius: 10px;
 }
 
+.group>.ingroup{
+  display: flex;
+  justify-content: space-between;
+}
+.groupcategories{
+  list-style-type: none;
+  font-weight: normal;
+  margin-top: 10px;
+}
+.groupcategories>li{
+  background: var(--secondaryside);
+  padding: 4px;
+  margin: 4px 0px;
+  border-radius: 5px;
+}
+.groupcategories>li:hover{
+  filter: brightness(130%);
+  cursor: pointer;
+}
+.groupcategories>li:active{
+  filter: none;
+}
+.menuopen{
+  transform: rotate(180deg);
+}
+.expanded{
+  display: none;
+}
 .disable-select {
   -webkit-user-select: none;
   -ms-user-select: none;

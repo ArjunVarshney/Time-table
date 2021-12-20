@@ -20,15 +20,7 @@ let faculty = [
   ["Ms. Snigdh, Ms. Konica Mukherjee"],
   ["Free"],
 ];
-let afterlunch = [
-  [],
-  ["1:35 - 2:25", "2:25 - 4:55"],
-  ["1:35 - 3:15", "3:15 - 4:05"],
-  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
-  ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
-  ["1:35 - 2:25", "2:25 - 3:15"],
-  [],
-];
+let afterlunch = [];
 let subjects = [
   "Engineering Mathematics (KAS-103T)",
   "Engineering Chemistry (KAS-102T)",
@@ -55,52 +47,6 @@ let codes = [
   "KAS-154P",
   "Free",
 ];
-let timetable = [
-  [],
-  [
-    "Quiz(Q)",
-    "KAS-103T(L)",
-    "KEC-101T(L)",
-    "KME-101T(L)",
-    "KMC-102(L)",
-    "KWS-151P(P)",
-  ],
-  [
-    "KEC-101T(L)",
-    "KAS-103T(L)",
-    "KAS-102T(L)",
-    "KME-101T(L)",
-    "KEC-151P(P)",
-    "KNC-101(L)",
-  ],
-  [
-    "KAS-102T(L)",
-    "KAS-103T(L)",
-    "KEC-101T(L)",
-    "KMC-102(L)",
-    "KME-101T(L)",
-    "KAS-102T(T)",
-    "KAS-154P(P)",
-  ],
-  [
-    "KNC-101(L)",
-    "KAS-103T(L)",
-    "KAS-102T(L)",
-    "KEC-101T(L)",
-    "KEC-101T(T)",
-    "",
-    "KAS-152P(P)",
-  ],
-  [
-    "Quiz(Q)",
-    "KAS-103T(L)",
-    "KAS-102T(L)",
-    "KME-101T(L)",
-    "KME-101T(T)",
-    "KAS-103T(T)",
-  ],
-  [],
-];
 
 document.querySelector(".Hometime").style.display = "none";
 
@@ -123,8 +69,30 @@ let days = [
   "Friday",
   "Saturday",
 ];
-getschedule(date);
+let group = localStorage.getItem("group");
+if (group == null) {
+  group = "11";
+}
 
+let timetable = [];
+fetch(`./timetables/${group}.json`)
+  .then((response) => response.json())
+  .then((data) => {
+    timetable = data.timetable;
+    afterlunch = data.timings
+    getschedule(date);
+  });
+function changegroup(element) {
+  localStorage.setItem("group", element.innerHTML);
+  window.location.reload();
+}
+expand()
+function expand(){
+  let menu = document.querySelector('.expand');
+  let groupcategories = document.querySelector(".groupcategories");
+  menu.classList.toggle('menuopen');
+  groupcategories.classList.toggle("expanded");
+}
 function changeday(element) {
   if (innerWidth <= 700) {
     sidebar.style.width = "0";
@@ -184,7 +152,7 @@ function setTimetable(todaytt, date) {
 
 function getSubject(code) {
   if (code === "") {
-    return "Free";
+    return "MMI";
   }
   if (code === "Quiz") {
     return code;
@@ -204,7 +172,7 @@ function getType(code) {
   } else if (code === "(P)") {
     return "Practical";
   } else if (code === "") {
-    return "Free";
+    return "MMI";
   } else {
     return "Quiz";
   }

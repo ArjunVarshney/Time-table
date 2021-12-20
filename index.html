@@ -39,6 +39,18 @@
       <div class="day"></div>
       <div class="day Hometime">Home Time!</div>
       <div class="day Holiday">Holiday</div>
+      <div class="day group">
+         <div class="ingroup">
+            <div class="grouphead">Group : 11</div>
+            <span class="material-icons expand" onclick="expand()">expand_less</span>
+         </div>
+         <ul class="groupcategories">
+            <li onclick="changegroup(this)">11</li>
+            <li onclick="changegroup(this)">12</li>
+            <!-- <li onclick="changegroup(this)">13</li>
+            <li onclick="changegroup(this)">14</li> -->
+         </ul>
+      </div>
       <div class="table">
          <table>
             <thead>
@@ -63,5 +75,8 @@
 <script src="main.js"></script>
 <script src="diary.js"></script>
 <script src="darkmode.js"></script>
+<script>
+   document.querySelector(".grouphead").innerHTML = "Group : " + (localStorage.getItem('group') ? localStorage.getItem('group') : "11")
+</script>
 
 </html>
