@@ -9,15 +9,15 @@ let subject,
   str = "";
 let faculty = [
   ["Dr. Geeta Verma"],
-  ["Dr. Ashutosh Srivastava"],
+  ["Dr. D.K. Mishra"],
   ["Er. Awanish Kr. Shukla"],
   ["Er. Dinesh"],
-  ["New IT-1"],
+  ["Er. Shashank Singh"],
   ["Mr. Shivesh Bhatnagar"],
-  ["Dr. Ashutosh Srivastava, D. K Mishra"],
-  ["Er. Awanish Kr. Shukla, Er. Sanjay Kr. Maurya"],
-  ["Er. Nitesh Gupta, Er. Sunil Kr. Yadav"],
-  ["Ms. Snigdh, Ms. Konica Mukherjee"],
+  ["D. K Mishra, Mr. S.P.S. Sengar"],
+  ["Er. Awanish Kr. Shukla, Er. Dhirendra Pratap SIngh"],
+  ["Er. Nitesh Gupta, Er. S.K. Katiyar"],
+  ["Ms. Snigdha, Ms. Konica Mukherjee"],
   ["Free"],
 ];
 let afterlunch = [];
