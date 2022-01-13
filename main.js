@@ -146,7 +146,7 @@ function setTimetable(todaytt, date) {
     type = getType(element.substr(element.length - 3, element.length));
     timings = getTimings(i + 1, date);
     teacher = getFaculty(code);
-    join_link = getLink(code)!=undefined?getLink(code):"";
+    join_link = getLink(code) != undefined ? getLink(code) : "";
     appendall(sno, subject, type, timings, join_link);
     if (sno == 4) {
       appendall(" ", "Lunch", " ", "12:55 - 1:35", "");
@@ -227,7 +227,7 @@ function showFaculty(element) {
     .getPropertyValue("background-color");
   if (element.parentElement.style.background == background) {
     let subject = getFacultySubject(element.innerText);
-      let join_link = getFacultyLink(element.innerText);
+    let join_link = getFacultyLink(element.innerText);
     element.innerHTML =
       join_link != ""
         ? `<div class="subject">${subject}</div><a class="linkbtn" href="${join_link}">Join</a>`
@@ -328,7 +328,5 @@ function finished(n) {
     let element = document.querySelector(`tr:nth-child(${i}) td:nth-child(2)`);
     element.style.textDecoration = "line-through";
     element.style.opacity = "0.6";
-    document.querySelector(`tr:nth-child(${i}) td:nth-child(2) .linkbtn`).style.pointerEvents = 'none';
-
   }
 }
