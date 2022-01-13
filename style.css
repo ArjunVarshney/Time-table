@@ -108,6 +108,15 @@ main {
   font-size: medium;
   border-radius: 5px;
 }
+.linkbtn{
+  background-color:var(--secondaryside);
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.subject{
+  margin-bottom: 10px;
+}
 .diary:focus {
   outline: none;
 }
