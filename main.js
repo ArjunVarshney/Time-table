@@ -212,7 +212,7 @@ function appendall(sno, subject, type, time, join_link) {
   } else {
     str += `<tr>
       <td>${sno}</td>
-      <td onclick = "showFaculty(this)"><div class="subject">${subject}</div><a class="linkbtn" href="${join_link}">Join</a></td>
+      <td onclick = "showFaculty(this)"><div class="subject">${subject}</div><a target="_blank" class="linkbtn" href="${join_link}">Join</a></td>
       <td>${type}</td>
       <td>${time}</td>
     </tr>
@@ -328,5 +328,7 @@ function finished(n) {
     let element = document.querySelector(`tr:nth-child(${i}) td:nth-child(2)`);
     element.style.textDecoration = "line-through";
     element.style.opacity = "0.6";
+    document.querySelector(`tr:nth-child(${i}) td:nth-child(2) .linkbtn`).style.pointerEvents = 'none';
+
   }
 }
