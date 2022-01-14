@@ -230,7 +230,7 @@ function showFaculty(element) {
     let join_link = getFacultyLink(element.innerText);
     element.innerHTML =
       join_link != ""
-        ? `<div class="subject">${subject}</div><a class="linkbtn" href="${join_link}">Join</a>`
+        ? `<div class="subject">${subject}</div><a class="linkbtn" target="_blank" href="${join_link}">Join</a>`
         : `<div class="subject">${subject}</div>`;
     element.parentElement.style.background = "none";
   } else {
