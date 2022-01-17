@@ -204,7 +204,7 @@ function appendall(sno, subject, type, time, join_link) {
   if (join_link == "") {
     str += `<tr>
       <td>${sno}</td>
-      <td onclick = "showFaculty(this)">${subject}</td>
+      <td>${subject}</td>
       <td>${type}</td>
       <td>${time}</td>
     </tr>
@@ -212,12 +212,31 @@ function appendall(sno, subject, type, time, join_link) {
   } else {
     str += `<tr>
       <td>${sno}</td>
-      <td onclick = "showFaculty(this)"><div class="subject">${subject}</div><a target="_blank" class="linkbtn" href="${join_link}">Join</a></td>
+      <td><div class="subject">${subject}</div><a target="_blank" class="linkbtn" href="${join_link}">Join</a></td>
       <td>${type}</td>
       <td>${time}</td>
     </tr>
     `;
   }
+  // for showing faculty on click
+
+  // if (join_link == "") {
+  //   str += `<tr>
+  //     <td>${sno}</td>
+  //     <td onclick = "showFaculty(this)">${subject}</td>
+  //     <td>${type}</td>
+  //     <td>${time}</td>
+  //   </tr>
+  // `;
+  // } else {
+  //   str += `<tr>
+  //     <td>${sno}</td>
+  //     <td onclick = "showFaculty(this)"><div class="subject">${subject}</div><a target="_blank" class="linkbtn" href="${join_link}">Join</a></td>
+  //     <td>${type}</td>
+  //     <td>${time}</td>
+  //   </tr>
+  //   `;
+  // }
 }
 
 let sidetab = document.querySelector("aside > ul > li");
