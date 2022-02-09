@@ -15,14 +15,12 @@ let faculty = [
   ["Er. Shashank Singh"],
   ["Mr. Shivesh Bhatnagar"],
   ["D. K Mishra, Mr. S.P.S. Sengar"],
-  ["Er. Awanish Kr. Shukla, Er. Dhirendra Pratap Singh"],
+  ["Er. Awanish Kr. Shukla, Er. Dhirendra Pratap SIngh"],
   ["Er. Nitesh Gupta, Er. S.K. Katiyar"],
   ["Ms. Snigdha, Ms. Konica Mukherjee"],
   ["Free"],
 ];
 let afterlunch = [];
-let links = [];
-let Meeting_details = [];
 let subjects = [
   "Engineering Mathematics (KAS-103T)",
   "Engineering Chemistry (KAS-102T)",
@@ -82,8 +80,6 @@ fetch(`./timetables/${group}.json`)
   .then((data) => {
     timetable = data.timetable;
     afterlunch = data.timings;
-    links = data.Links;
-    Meeting_details = data.meetingDetails;
     getschedule(date);
   });
 function changegroup(element) {
@@ -146,10 +142,9 @@ function setTimetable(todaytt, date) {
     type = getType(element.substr(element.length - 3, element.length));
     timings = getTimings(i + 1, date);
     teacher = getFaculty(code);
-    join_link = getLink(code) != undefined ? getLink(code) : "";
-    appendall(sno, subject, type, timings, join_link);
+    appendall(sno, subject, type, timings);
     if (sno == 4) {
-      appendall(" ", "Lunch", " ", "12:55 - 1:35", "");
+      appendall(" ", "Lunch", " ", "12:55 - 1:35");
     }
   }
   printtimetable(str);
@@ -200,43 +195,14 @@ function getTimings(n, date) {
     return afterlunch[date.getDay()][n - 5];
   }
 }
-function appendall(sno, subject, type, time, join_link) {
-  if (join_link == "") {
-    str += `<tr>
-      <td>${sno}</td>
-      <td>${subject}</td>
-      <td>${type}</td>
-      <td>${time}</td>
-    </tr>
-  `;
-  } else {
-    str += `<tr>
-      <td>${sno}</td>
-      <td><div class="subject">${subject}</div><a target="_blank" class="linkbtn" href="${join_link}">Join</a></td>
-      <td>${type}</td>
-      <td>${time}</td>
-    </tr>
-    `;
-  }
-  // for showing faculty on click
-
-  // if (join_link == "") {
-  //   str += `<tr>
-  //     <td>${sno}</td>
-  //     <td onclick = "showFaculty(this)">${subject}</td>
-  //     <td>${type}</td>
-  //     <td>${time}</td>
-  //   </tr>
-  // `;
-  // } else {
-  //   str += `<tr>
-  //     <td>${sno}</td>
-  //     <td onclick = "showFaculty(this)"><div class="subject">${subject}</div><a target="_blank" class="linkbtn" href="${join_link}">Join</a></td>
-  //     <td>${type}</td>
-  //     <td>${time}</td>
-  //   </tr>
-  //   `;
-  // }
+function appendall(sno, subject, type, time) {
+  str += `<tr>
+    <td>${sno}</td>
+    <td onclick = "showFaculty(this)">${subject}</td>
+    <td>${type}</td>
+    <td>${time}</td>
+  </tr>
+`;
 }
 
 let sidetab = document.querySelector("aside > ul > li");
@@ -246,11 +212,7 @@ function showFaculty(element) {
     .getPropertyValue("background-color");
   if (element.parentElement.style.background == background) {
     let subject = getFacultySubject(element.innerText);
-    let join_link = getFacultyLink(element.innerText);
-    element.innerHTML =
-      join_link != ""
-        ? `<div class="subject">${subject}</div><a class="linkbtn" target="_blank" href="${join_link}">Join</a>`
-        : `<div class="subject">${subject}</div>`;
+    element.innerText = subject;
     element.parentElement.style.background = "none";
   } else {
     let subject = element.innerText;
@@ -272,24 +234,10 @@ function getFaculty(code) {
     }
   }
 }
-function getLink(code) {
-  for (let i = 0; i < codes.length; i++) {
-    if (code === codes[i]) {
-      return links[i];
-    }
-  }
-}
 function getFacultySubject(name) {
   for (let i = 0; i < faculty.length; i++) {
     if (faculty[i][0] === name) {
       return subjects[i];
-    }
-  }
-}
-function getFacultyLink(name) {
-  for (let i = 0; i < faculty.length; i++) {
-    if (faculty[i][0] === name) {
-      return links[i];
     }
   }
 }
