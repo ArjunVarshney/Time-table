@@ -3,7 +3,6 @@
      [],
      [
        "Quiz(Q)",
-       "KAS-103T(L)",
        "KEC-101T(L)",
        "KME-101T(L)",
        "KMC-102(L)",
@@ -12,16 +11,15 @@
      [
        "KEC-101T(L)",
        "KAS-103T(L)",
-       "KAS-102T(L)",
        "KME-101T(L)",
        "KEC-151P(P)",
-       "KNC-101(L)"
+       "KNC-101(L)",
+       "KAS-103T(T)"
      ],
      [
-       "Quiz(Q)",
+       "KMC-102(L)",
        "KAS-103T(L)",
        "KEC-101T(L)",
-       "KMC-102(L)",
        "KME-101T(L)",
        "KAS-102T(L)",
        "KAS-154P(P)"
@@ -30,42 +28,28 @@
        "KNC-101(L)",
        "KAS-103T(L)",
        "KAS-102T(L)",
-       "KEC-101T(L)",
-       "KME-101T(T)",
+       "",
        "KAS-102T(T)",
        "KAS-152P(P)"
      ],
      [
        "Quiz(Q)",
        "KAS-103T(L)",
-       "KAS-102T(L)",
        "KME-101T(L)",
-       "",
-       "KAS-103T(T)",
-       "KEC-101T(T)"
+       "KME-101T(T)",
+       "KAS-102T(L)",
+       "KEC-101T(T)",
+       "KEC-101T(L)"
      ],
      []
    ],
    "timings":[
       [],
-      ["1:35 - 2:25", "2:25 - 4:55"],
-      ["1:35 - 3:15", "3:15 - 4:05"],
-      ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
-      ["1:35 - 2:25", "2:25 - 3:15", "3:15 - 4:55"],
-      ["1:35 - 2:25", "2:25 - 3:15","3:15 - 4:05"],
+      ["12:40 - 1:40", "1:40 - 4:25"],
+      ["12:40 - 2:35", "2:35 - 3:30", "3:30 - 4:25"],
+      ["12:40 - 1:40", "1:40 - 2:35", "2:35 - 4:25"],
+      ["12:40 - 1:40", "1:40 - 2:35", "2:35 - 4:25"],
+      ["12:40 - 1:40", "1:40 - 2:35", "2:35 - 3:30", "3:30 - 4:25"],
       []
-    ],
-    "Links":[
-      "https://us04web.zoom.us/j/79060065955?pwd=p-12RiSJb7gOQYBiS2ImWwvtdln5Rs.1",
-      "https://us04web.zoom.us/j/78145586810?pwd=SE5KK1pzdVVmM1Vwb2paWDNXdHBrdz09",
-      "https://us04web.zoom.us/j/6918971930?pwd=SkRjMDlHN1lpcUFxSDUrK1dXRFJqdz09",
-      "https://us04web.zoom.us/j/8428574904?pwd=E2lCWbU79p0",
-      "https://us04web.zoom.us/j/79021679241?pwd=PFPqqXEGV6Ou6Z8u_dBJtc5_EyaHCC.1",
-      "https://us04web.zoom.us/j/78034946586?pwd=zXRIwonO1AvIuLmxqOfWPBFRkoygYD.1",
-      "",
-      "https://us04web.zoom.us/j/6918971930?pwd=SkRjMDlHN1lpcUFxSDUrK1dXRFJqdz09",
-      "https://us04web.zoom.us/j/4600818771?pwd=S0p6dXh0SHNKQmtTZTNkUExMU0JyQT09",
-      "",
-      ""
     ]
 }

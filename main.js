@@ -143,8 +143,8 @@ function setTimetable(todaytt, date) {
     timings = getTimings(i + 1, date);
     teacher = getFaculty(code);
     appendall(sno, subject, type, timings);
-    if (sno == 4) {
-      appendall(" ", "Lunch", " ", "12:55 - 1:35");
+    if (sno == 3) {
+      appendall(" ", "Lunch", " ", "12:00 - 12:40");
     }
   }
   printtimetable(str);
@@ -188,11 +188,8 @@ function getTimings(n, date) {
   if (n == 3) {
     return "11:00 - 12:00";
   }
-  if (n == 4) {
-    return "12:00 - 12:55";
-  }
-  if (n > 4) {
-    return afterlunch[date.getDay()][n - 5];
+  if (n > 3) {
+    return afterlunch[date.getDay()][n - 4];
   }
 }
 function appendall(sno, subject, type, time) {
