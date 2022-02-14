@@ -249,12 +249,12 @@ function active() {
     x = 0;
   if (days[date.getDay()] != "Saturday" && days[date.getDay()] != "Sunday") {
     if (
-      (date.getHours() >= 13 && date.getMinutes() >= 35) ||
+      (date.getHours() >= 13 && date.getMinutes() >= 40) ||
       date.getHours() >= 14
     ) {
       n = 5;
     } else if (
-      (date.getHours() >= 12 && date.getMinutes() >= 55) ||
+      (date.getHours() >= 12 && date.getMinutes() >= 40) ||
       date.getHours() >= 13
     ) {
       n = 4;
