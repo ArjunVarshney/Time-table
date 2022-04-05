@@ -22,29 +22,29 @@ let faculty = [
 ];
 let afterlunch = [];
 let subjects = [
-  "Engineering Mathematics (KAS-103T)",
-  "Engineering Chemistry (KAS-102T)",
-  "Emerging Domain in Elec. Engineering (KEC-101T)",
-  "Fundamentals of Mechanical Engg. and Mechatronics (KME-101T)",
-  "Emerging Technology for Engineering (KMC-102)",
-  "Soft Skill (KNC-101)",
-  "Engineering Chemistry lab (KAS-152P)",
-  "Basic Electronics Engineering lab (KEC-151P)",
-  "Mechanical Workshop lab (KWS-151P)",
-  "English Language lab (KAS-154P)",
+  "Engineering Mathematics (KAS-203T)",
+  "Engineering Physics (KAS-201T)",
+  "Basic Electrical Engineering (KEE-201T)",
+  "Programming for Problem Solving (KCS-201T)",
+  "AI For Engineering (KMC-201)",
+  "Soft Skill (KNC-201)",
+  "Engineering Chemistry lab (KAS-251P)",
+  "Basic Electronics Engineering lab (KEE-251P)",
+  "Engineering Graphics & Design lab (KCE-251P)",
+  "Programming for Problem Solving (KCS-251P)",
   "Free",
 ];
 let codes = [
-  "KAS-103T",
-  "KAS-102T",
-  "KEC-101T",
-  "KME-101T",
-  "KMC-102",
-  "KNC-101",
-  "KAS-152P",
-  "KEC-151P",
-  "KWS-151P",
-  "KAS-154P",
+  "KAS-203T",
+  "KAS-201T",
+  "KEE-201T",
+  "KCS-201T",
+  "KMC-201",
+  "KNC-201",
+  "KAS-251P",
+  "KEE-251P",
+  "KCE-251P",
+  "KCS-251P",
   "Free",
 ];
 
@@ -157,6 +157,9 @@ function getSubject(code) {
   if (code === "Quiz") {
     return code;
   }
+  if (code === "IIC") {
+    return code;
+  }
   for (let i = 0; i < codes.length; i++) {
     if (codes[i] === code) {
       return subjects[i];
@@ -171,10 +174,10 @@ function getType(code) {
     return "Tutorial";
   } else if (code === "(P)") {
     return "Practical";
-  } else if (code === "") {
-    return "MMI";
-  } else {
+  } else if (code === "(Q)") {
     return "Quiz";
+  } else {
+    return "IIC";
   }
 }
 
