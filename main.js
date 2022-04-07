@@ -9,15 +9,15 @@ let subject,
   str = "";
 let faculty = [
   ["Dr. Geeta Verma"],
-  ["Dr. D.K. Mishra"],
-  ["Er. Awanish Kr. Shukla"],
-  ["Er. Dinesh"],
+  ["Dr. Saiful I. Ansari"],
+  ["Er. Braj Kishore Verma"],
+  ["Er. Rahul Chakravorty"],
   ["Er. Shashank Singh"],
-  ["Mr. Shivesh Bhatnagar"],
-  ["D. K Mishra, Mr. S.P.S. Sengar"],
-  ["Er. Awanish Kr. Shukla, Er. Dhirendra Pratap SIngh"],
-  ["Er. Nitesh Gupta, Er. S.K. Katiyar"],
-  ["Ms. Snigdha, Ms. Konica Mukherjee"],
+  ["Ms. Ruchi Chaturvedi"],
+  ["Dr. Satish Chand, Dr.Saiful I. Ansari"],
+  ["Er. Braj Kishore Verma, Er. Bhupesh Kr. Pal"],
+  ["Er. Rohit Singh, Er. S.K. Katiyar"],
+  ["Er. Avadh Kishore Singh, Rahul Chakravorty"],
   ["Free"],
 ];
 let afterlunch = [];
@@ -28,8 +28,8 @@ let subjects = [
   "Programming for Problem Solving (KCS-201T)",
   "AI For Engineering (KMC-201)",
   "Soft Skill (KNC-201)",
-  "Engineering Chemistry lab (KAS-251P)",
-  "Basic Electronics Engineering lab (KEE-251P)",
+  "Engineering Physics Lab (KAS-251P)",
+  "Basic Electrical Engineering Lab (KEE-251P)",
   "Engineering Graphics & Design lab (KCE-251P)",
   "Programming for Problem Solving (KCS-251P)",
   "Free",
@@ -71,7 +71,7 @@ let days = [
 ];
 let group = localStorage.getItem("group");
 if (group == null) {
-  group = "11";
+  group = "21";
 }
 
 let timetable = [];
@@ -176,8 +176,10 @@ function getType(code) {
     return "Practical";
   } else if (code === "(Q)") {
     return "Quiz";
-  } else {
+  } else if (code === "(I)") {
     return "IIC";
+  } else {
+    return "MMI";
   }
 }
 
