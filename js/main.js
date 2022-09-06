@@ -27,7 +27,8 @@ function changeDay(element) {
   fetchAndSet();
 }
 
-function changeGroup(element){
-  console.log(groupHead.innerHTML);
-  groupHead.innerHTML = "Group: "+element.innerHTML
-}
+let changeGroup = (element) => {
+  localStorage.setItem("group", element.innerHTML);
+  group = element.innerHTML;
+  window.location.reload();
+};

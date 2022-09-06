@@ -1,6 +1,15 @@
 let tBody = document.querySelector("tbody");
 let date = new Date();
 let day = date.getDay();
+let localGroup = localStorage.getItem("group");
+let group = "31";
+
+if (localGroup == "31" || localGroup == "32") {
+  group = localGroup;
+} else {
+  localStorage.setItem("group", "31");
+  group = "31";
+}
 
 let allDays = [
   "Sunday",
@@ -21,7 +30,7 @@ const fetchAndSet = () => {
   document.querySelector(".day").innerHTML = allDays[day];
 
   //fetch the data from the json create in the json folders and perform the actions
-  fetch("https://arjunvarshney.github.io/Time-table/json/31.json")
+  fetch(`https://arjunvarshney.github.io/Time-table/json/${group}.json`)
     .then((response) => response.json())
     .then((data) => {
       //gets the subject details from the subject code from the json
