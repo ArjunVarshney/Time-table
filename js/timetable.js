@@ -14,7 +14,6 @@ let allDays = [
 
 //this fetches and sets the date in the table
 const fetchAndSet = () => {
-   
   // first set the inner content of the tBody to null the append the contect
   tBody.innerHTML = "";
 
@@ -22,7 +21,7 @@ const fetchAndSet = () => {
   document.querySelector(".day").innerHTML = allDays[day];
 
   //fetch the data from the json create in the json folders and perform the actions
-  fetch("/json/31.json")
+  fetch("https://arjunvarshney.github.io/Time-table/json/31.json")
     .then((response) => response.json())
     .then((data) => {
       //gets the subject details from the subject code from the json
