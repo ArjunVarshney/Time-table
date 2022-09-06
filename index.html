@@ -26,13 +26,13 @@
    </header>
    <aside>
       <ul>
-         <li onclick="changeday(this)" id="1">Monday</li>
-         <li onclick="changeday(this)" id="2">Tuesday</li>
-         <li onclick="changeday(this)" id="3">Wednesday</li>
-         <li onclick="changeday(this)" id="4">Thursday</li>
-         <li onclick="changeday(this)" id="5">Friday</li>
-         <li onclick="changeday(this)" id="6">Saturday</li>
-         <li onclick="changeday(this)" id="7">Sunday</li>
+         <li onclick="changeDay(this)" id="1">Monday</li>
+         <li onclick="changeDay(this)" id="2">Tuesday</li>
+         <li onclick="changeDay(this)" id="3">Wednesday</li>
+         <li onclick="changeDay(this)" id="4">Thursday</li>
+         <li onclick="changeDay(this)" id="5">Friday</li>
+         <li onclick="changeDay(this)" id="6">Saturday</li>
+         <li onclick="changeDay(this)" id="0">Sunday</li>
       </ul>
    </aside>
    <main>
@@ -41,14 +41,12 @@
       <div class="day Holiday">Holiday</div>
       <div class="day group">
          <div class="ingroup">
-            <div class="grouphead">Group : 11</div>
-            <span class="material-icons expand" onclick="expand()">expand_less</span>
+            <div class="grouphead">Group: 31</div>
+            <span class="material-icons expand menuopen" onclick="expand()">expand_less</span>
          </div>
-         <ul class="groupcategories">
-            <li onclick="changegroup(this)">21</li>
-            <li onclick="changegroup(this)">22</li>
-            <!-- <li onclick="changegroup(this)">13</li>
-            <li onclick="changegroup(this)">14</li> -->
+         <ul class="groupcategories expanded">
+            <li onclick="changeGroup(this)">31</li>
+            <!-- <li onclick="changeGroup(this)">32</li> -->
          </ul>
       </div>
       <div class="table">
@@ -72,9 +70,10 @@
       </div>
    </main>
 </body>
-<script src="main.js"></script>
-<script src="diary.js"></script>
-<script src="darkmode.js"></script>
+<script src="js/main.js"></script>
+<script src="js/timetable.js"></script>
+<script src="js/diary.js"></script>
+<script src="js/darkmode.js"></script>
 <script>
    document.querySelector(".grouphead").innerHTML = "Group : " + (localStorage.getItem('group') ? localStorage.getItem('group') : "11")
 </script>

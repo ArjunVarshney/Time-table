@@ -36,8 +36,3 @@ function darkmode() {
   root.style.setProperty("--side", "#303134");
   root.style.setProperty("--secondaryside", "#3c3d40");
 }
-
-// #5f6368
-// #202124
-
-// #dadce0
