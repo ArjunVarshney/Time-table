@@ -22,7 +22,7 @@ const fetchAndSet = () => {
   document.querySelector(".day").innerHTML = allDays[day];
 
   //fetch the data from the json create in the json folders and perform the actions
-  fetch("../json/31.json")
+  fetch("/json/31.json")
     .then((response) => response.json())
     .then((data) => {
       //gets the subject details from the subject code from the json
