@@ -1,0 +1,79 @@
+{
+   "timetable": [
+      {
+        "class":[],
+        "time":[]
+      },
+      {
+        "class":["Quiz","KCS-302(L)","KAS-302(L)","Lunch","KCS-352(P)","KVE-301(L)","KCS-303(T)"],
+        "time":["9:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 12:40","12:40 - 2:35","2:35 - 3:30","3:30 - 4:25"]
+      },
+      {
+        "class":["KCS-302(L)","KNC-302(L)","KCS-303(L)","Lunch","KCS-301(L)","KCS-301(T)"],
+        "time":["9:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 12:40","12:40 - 1:40","1:40 - 2:35"]
+      },
+      {
+        "class":["KCS-301(L)","KAS-302(L)","KVE-301(L)","Lunch","KCS-351(P)","MMI","IIC"],
+        "time":["9:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 12:40","12:40 - 2:35","2:35 - 3:30","3:30 - 4:25"]
+      },
+      {
+        "class":["KCS-302(L)","KCS-301(L)","KCS-303(L)","Lunch","KNC-302(L)","KAS-302(L)","KAS-302(T)"],
+        "time":["9:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 12:40","12:40 - 1:40","1:40 - 2:35","2:35 - 3:30"]
+      },
+      {
+        "class":["Quiz","KAS-302(L)","KCS-303(L)","Lunch","KCS-353(P)","KVE-301(L)","KCS-303(T)"],
+        "time":["9:00 - 10:00","10:00 - 11:00","11:00 - 12:00","12:00 - 12:40","12:40 - 2:35","2:35 - 3:30","3:30 - 4:25"]
+      },
+      {
+        "class":[],
+        "time":[]
+      }
+   ],
+   "details":[
+    {
+      "code":"KAS-302",
+      "subject":"Mathematics-IV",
+      "name":"Dr. Shiv CHaran"
+    },
+    {
+      "code":"KVE-301",
+      "subject":"Universal Human Value",
+      "name":"Er. Sonam Singh"
+    },
+    {
+      "code":"KCS-301",
+      "subject":"Data Structure",
+      "name":"Er. Vinayak"
+    },
+    {
+      "code":"KCS-302",
+      "subject":"Computer Organization and Architecture",
+      "name":"Er. Shipra Pandey"
+    },
+    {
+      "code":"KCS-303",
+      "subject":"Discrete Structure & Theory of Logic",
+      "name":"Mr. Umesh P. Singh"
+    },
+    {
+      "code":"KNC-302",
+      "subject":"Python Programming",
+      "name":"Dr. Nidhi Saxena"
+    },
+    {
+      "code":"KCS-351",
+      "subject":"Data Structure",
+      "name":"Er. Amit Kr. Sachan"
+    },
+    {
+      "code":"KCS-352",
+      "subject":"Computer Organization Lab",
+      "name":"Er. Shipra Pandey"
+    },
+    {
+      "code":"KCS-353",
+      "subject":"Discrete Structure & Logic Lab",
+      "name":"Mr. Umesh P. Singh"
+    }
+   ]
+}
