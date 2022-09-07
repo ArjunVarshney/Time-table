@@ -32,6 +32,10 @@ header {
   position: absolute;
   right: 40px;
 }
+.cancel{
+  text-decoration: line-through;
+  opacity: 0.6;
+}
 header > h2 {
   margin-left: 24px;
   font-family: "Poppins", sans-serif;

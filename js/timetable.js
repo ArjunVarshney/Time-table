@@ -117,6 +117,36 @@ const fetchAndSet = () => {
         //lunch after 3rd periad ie at 4th position so the counter will not increase at lunch
         if (i != 2) c++;
       }
+
+      /*---------------------logic for cancelling the subject after finishing------------------*/
+
+      let rows = document.querySelectorAll("tr>td:nth-child(2)");
+      console.log(rows);
+
+      //if the current hour and the current min are greater than the end hour and end min then cancel the period
+      if (date.getDay() == day) {
+        let i = 0;
+        for (i = 0; i < timmings.length; i++) {
+          let element = timmings[i];
+          let endTime = element.substring(element.indexOf("-") + 2);
+          let endMin = parseInt(endTime.substring(endTime.indexOf(":") + 1));
+          let endHour = parseInt(
+            endTime.substring(0, endTime.indexOf(":") + 1)
+          );
+          endHour = endHour < 9 ? endHour + 12 : endHour;
+          let currHour = date.getHours();
+          let currMin = date.getMinutes();
+          if (!(endHour <= currHour && endMin <= currMin)) {
+            break;
+          }
+        }
+
+        // i contains the number of periods from the start
+        for (let j = 0; j < i; j++) {
+          const element = rows[j];
+          element.classList.add("cancel");
+        }
+      }
     })
     .catch((err) => console.error(err));
 };
