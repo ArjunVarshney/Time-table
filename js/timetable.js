@@ -85,7 +85,11 @@ const fetchAndSet = () => {
         let type = getType(subject);
         let html = `<tr>
                  <td>${sno}</td>
-                 <td onclick="showFaculty(this)">${details.subject} ${
+                 <td onclick="showFaculty(this)" data-faculty="${
+                   details.name
+                 }" data-subject="${details.subject} ${
+          details.code == "" ? "" : "(" + details.code + ")"
+        }">${details.subject} ${
           details.code == "" ? "" : "(" + details.code + ")"
         }</td>
                  <td>${type}</td>
@@ -121,7 +125,6 @@ const fetchAndSet = () => {
       /*---------------------logic for cancelling the subject after finishing------------------*/
 
       let rows = document.querySelectorAll("tr>td:nth-child(2)");
-      console.log(rows);
 
       //if the current hour and the current min are greater than the end hour and end min then cancel the period
       if (date.getDay() == day) {

@@ -2,6 +2,7 @@ let menu = document.querySelector("header>span");
 let sidebar = document.querySelector("aside");
 let tablecontent = document.querySelector("tbody");
 let groupHead = document.querySelector(".grouphead");
+let style = getComputedStyle(document.body);
 
 document.querySelector(".Hometime").style.display = "none";
 
@@ -31,4 +32,15 @@ let changeGroup = (element) => {
   localStorage.setItem("group", element.innerHTML);
   group = element.innerHTML;
   window.location.reload();
+};
+
+//change color and show the faculty name on click on the subject
+const showFaculty = (container) => {
+  if (container.innerText != container.dataset.faculty) {
+    container.innerText = container.dataset.faculty;
+    container.style.backgroundColor = style.getPropertyValue("--secondaryside");
+  } else {
+    container.innerText = container.dataset.subject;
+    container.style.backgroundColor = style.getPropertyValue("--primary");
+  }
 };
